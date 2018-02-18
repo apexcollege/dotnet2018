@@ -11,7 +11,7 @@ namespace ecommerce.data
     public class StudentDbHelper
     {
         private static string connectionString =
-            "Server=MSSqlLocalDb;Integrated Security=True;Initial Catalog=ecommercedb;";
+            "Server=(localdb)\\MSSqlLocalDb;Integrated Security=True;Initial Catalog=ecommercedb;";
 
         public bool Insert(Student s)
         {

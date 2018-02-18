@@ -17,14 +17,21 @@ namespace ecommerce.app
         }
         public bool CreateStudent(Student s)
         {
-            s.Active = true; //student should be active when created
-            s.EnrolDate = DateTime.Now; //enroldate should be today
+            //handle any logic here
+
+            //student should be active when created
+            s.Active = true;
+
+            //enroldate should be today
+            s.EnrolDate = DateTime.Now;
+            
             return helper.Insert(s);
         }
         public bool UpdateStudent(Student s)
         {
             return helper.Update(s);
         }
+
         public bool DeleteStudent(Student s)
         {
             return helper.Delete(s);
