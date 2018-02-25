@@ -15,6 +15,7 @@ namespace ecommerce.data
 
         public bool Insert(Attendance a)
         {
+            
             //step 1: initialize connection
             SqlConnection conn = new SqlConnection(connectionString);
             //Step 2: instantiate sqlcommand, query
