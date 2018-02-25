@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,17 +12,17 @@ namespace ecommerce.data
     public class AttendanceDbHelper
     {
         private static string connectionString =
-            "Server=(localdb)\\MSSqlLocalDb;Integrated Security=True;Initial Catalog=ecommercedb;";
+            ConfigurationManager.ConnectionStrings["defaultconnstr"].ConnectionString;
 
         public bool Insert(Attendance a)
         {
-            
             //step 1: initialize connection
             SqlConnection conn = new SqlConnection(connectionString);
             //Step 2: instantiate sqlcommand, query
             string query = "INSERT INTO Attendance (StudentId, AttendanceDate," +
                 "IsPresent,Remarks) VALUES (@StudentId, @AttendanceDate," +
                 "@IsPresent,@Remarks)";
+            
             SqlCommand cmd = new SqlCommand(query, conn);
             //pass value to each parameters of sql query
             cmd.Parameters.AddWithValue("@StudentId", a.StudentId);

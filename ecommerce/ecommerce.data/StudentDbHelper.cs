@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace ecommerce.data
     public class StudentDbHelper
     {
         private static string connectionString =
-            "Server=(localdb)\\MSSqlLocalDb;Integrated Security=True;Initial Catalog=ecommercedb;";
+            ConfigurationManager.ConnectionStrings["defaultconnstr"].ConnectionString;
 
         public bool Insert(Student s)
         {
