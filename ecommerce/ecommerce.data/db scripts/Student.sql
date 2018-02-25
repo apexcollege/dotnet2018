@@ -1,0 +1,10 @@
+﻿
+CREATE TABLE Student
+(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Name NVARCHAR(MAX), 
+	RollNo INT, 
+	Grade NVARCHAR(50),
+    EnrolDate DATE,
+	Active BIT
+)
