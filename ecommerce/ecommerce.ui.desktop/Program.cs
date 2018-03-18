@@ -16,7 +16,7 @@ namespace ecommerce.ui.desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStudent());
+            Application.Run(new FormMain());
         }
     }
 }
